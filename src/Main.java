@@ -19,8 +19,7 @@ public class Main {
             int ingredientNum = 4+rd.nextInt(5);
             for (int j=8; j>ingredientNum; j--){
                 burrito.remove(j);
-            }
-            int count = burrito.size();
+            }int count = burrito.size();
             for (String x : burrito) {
                 if (x.contains("no")) {
                     count--;
