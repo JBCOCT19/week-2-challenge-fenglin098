@@ -5,18 +5,20 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) {
         Random rd = new Random();
-        ArrayList<String> burrito = new ArrayList<>();
-                burrito.add(riceM());
-                burrito.add(meatM());
-                burrito.add(beansM());
-                burrito.add(salsaM());
-                burrito.add(veggiesM());
-                burrito.add(cheeseM());
-                burrito.add(guacM());
-                burrito.add(quesoM());
-                burrito.add(sourcreamM());
-        System.out.println(burrito);
-        int ingredientsNum = rd.nextInt();
+        int ingredientsNum = 3+rd.nextInt(6);
+        ArrayList<String> burrito = new ArrayList<>(ingredientsNum);
+            burrito.add(riceM());
+            burrito.add(meatM());
+            burrito.add(beansM());
+            burrito.add(salsaM());
+            burrito.add(veggiesM());
+            burrito.add(cheeseM());
+            burrito.add(guacM());
+            burrito.add(quesoM());
+            burrito.add(sourcreamM());
+            System.out.println(burrito);
+
+        }
 //        ArrayList<String> burrito = new ArrayList<>();
 //        int count =0;
 //        for (int j=0; j<25; j++){
@@ -44,7 +46,7 @@ public class Main {
 //            System.out.println("Burrito "+i+" "+riceM() + ", " + meatM() + ", " + beansM() + ", " + salsaM() + ", " + veggiesM() + ", " + cheeseM() + ", " + guacM() + ", " + quesoM() + ", " + sourcreamM());
 //
 //        }
-   }
+
 
     public static String riceM(){
         String[] rice = new String[]{"white", "brown", "none", "all"};
