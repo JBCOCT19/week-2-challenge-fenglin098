@@ -15,6 +15,11 @@ public class Main {
             burrito.add(guacM());
             burrito.add(quesoM());
             burrito.add(sourcreamM());
+            Random rd = new Random();
+            int ingredientNum = 4+rd.nextInt(5);
+            for (int j=8; j>ingredientNum; j--){
+                burrito.remove(j);
+            }
             int count = burrito.size();
             for (String x : burrito) {
                 if (x.contains("no")) {
