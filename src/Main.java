@@ -4,10 +4,47 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        for (int i=0; i<25; i++){
-            System.out.println("Burrito "+i+" "+riceM() + " ," + meatM() + " ," + beansM() + " ," + salsaM() + " ," + veggiesM() + " ," + cheeseM() + " ," + guacM() + " ," + quesoM() + " ," + sourcreamM());
-        }
-    }
+        Random rd = new Random();
+        ArrayList<String> burrito = new ArrayList<>();
+                burrito.add(riceM());
+                burrito.add(meatM());
+                burrito.add(beansM());
+                burrito.add(salsaM());
+                burrito.add(veggiesM());
+                burrito.add(cheeseM());
+                burrito.add(guacM());
+                burrito.add(quesoM());
+                burrito.add(sourcreamM());
+        System.out.println(burrito);
+        int ingredientsNum = rd.nextInt();
+//        ArrayList<String> burrito = new ArrayList<>();
+//        int count =0;
+//        for (int j=0; j<25; j++){
+//            do {
+//                String burritoNum ="burrito"+j
+//                ArrayList<String> burritoNum= new ArrayList<>();
+//                burrito.add(riceM());
+//                burrito.add(meatM());
+//                burrito.add(beansM());
+//                burrito.add(salsaM());
+//                burrito.add(veggiesM());
+//                burrito.add(cheeseM());
+//                burrito.add(guacM());
+//                burrito.add(quesoM());
+//                burrito.add(sourcreamM());
+//
+//            }while (count<25);
+//        }
+//        for (String x:burrito){
+//            if (x.contains("no")){
+//                count++;
+//            }
+//        }
+//      for (int i=0; i<25; i++){
+//            System.out.println("Burrito "+i+" "+riceM() + ", " + meatM() + ", " + beansM() + ", " + salsaM() + ", " + veggiesM() + ", " + cheeseM() + ", " + guacM() + ", " + quesoM() + ", " + sourcreamM());
+//
+//        }
+   }
 
     public static String riceM(){
         String[] rice = new String[]{"white", "brown", "none", "all"};
@@ -101,6 +138,11 @@ public class Main {
         }String sourcreamChoice=sourcream[randSourcream]+" sour cream";
         return sourcreamChoice;
 
+    }
+
+    public static double price(int x){
+        double total = 0.5*x+3;
+        return total;
     }
 
 
