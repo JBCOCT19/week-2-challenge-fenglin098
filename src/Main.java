@@ -14,6 +14,7 @@ public class Main {
         String[] queso = new String[]{"yes", "no"};
         String[] sourcream = new String[]{"yes", "no"};
         Random r = new Random();
+        System.out.println(riceM());
 //        int randrice = r.nextInt(rice.length);
         int randmeat = r.nextInt(meat.length);
         int randbeans = r.nextInt(beans.length);
@@ -24,29 +25,30 @@ public class Main {
         int randqueso = r.nextInt(queso.length);
         int randsourcream = r.nextInt(sourcream.length);
 
-        for (int i=1; i<26; i++){
+//        for (int i=1; i<26; i++){
 //            String riceChoice = rice[randrice];
-            String meatChoice = meat[randmeat];
-            String beansChoice = beans[randbeans];
-            String salsaChoice = salsa[randsalsa];
-            String veggiesChoice = veggies[randveggies];
-            String cheeseChoice = cheese[randcheese];
-            String guacChoice = guac[randguac];
-            String quesoChoice = queso[randqueso];
-            String sourcreamChoice = sourcream[randsourcream];
-//            System.out.println("Burrito " + i+": " +riceChoice+", "+meatChoice+", "+beansChoice+", "+salsaChoice+", "+veggiesChoice+", "+cheeseChoice+", "+guacChoice+", "+quesoChoice+", "+sourcreamChoice+".");
-        }
-//        System.out.println(Arrays.toString(rice));
+//            String meatChoice = meat[randmeat];
+//            String beansChoice = beans[randbeans];
+//            String salsaChoice = salsa[randsalsa];
+//            String veggiesChoice = veggies[randveggies];
+//            String cheeseChoice = cheese[randcheese];
+//            String guacChoice = guac[randguac];
+//            String quesoChoice = queso[randqueso];
+//            String sourcreamChoice = sourcream[randsourcream];
+////            System.out.println("Burrito " + i+": " +riceChoice+", "+meatChoice+", "+beansChoice+", "+salsaChoice+", "+veggiesChoice+", "+cheeseChoice+", "+guacChoice+", "+quesoChoice+", "+sourcreamChoice+".");
+//        }
+////        System.out.println(Arrays.toString(rice));
 
     }
 
     public static String riceM(){
         String[] rice = new String[]{"white", "brown", "none", "all"};
         Random r = new Random();
-        int randrice = r.nextInt(rice.length);
-        ArrayList<String> riceChoice = new ArrayList<>();
-        if ()
-
+        int randRice = r.nextInt(rice.length);
+        if (rice[randRice].equals("none")){
+            rice[randRice]="no";
+        }String riceChoice=rice[randRice]+" rice";
+        return riceChoice;
     }
 
 }
