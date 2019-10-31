@@ -4,9 +4,8 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        Random rd = new Random();
-        int ingredientsNum = 3+rd.nextInt(6);
-        ArrayList<String> burrito = new ArrayList<>(ingredientsNum);
+        for (int i = 1; i < 26; i++) {
+            ArrayList<String> burrito = new ArrayList<>();
             burrito.add(riceM());
             burrito.add(meatM());
             burrito.add(beansM());
@@ -16,37 +15,16 @@ public class Main {
             burrito.add(guacM());
             burrito.add(quesoM());
             burrito.add(sourcreamM());
-            System.out.println(burrito);
-
+            int count = burrito.size();
+            for (String x : burrito) {
+                if (x.contains("no")) {
+                    count--;
+                }
+            }
+            System.out.println("burrito " + i + ": " + burrito + "\t$" + price(count));
         }
-//        ArrayList<String> burrito = new ArrayList<>();
-//        int count =0;
-//        for (int j=0; j<25; j++){
-//            do {
-//                String burritoNum ="burrito"+j
-//                ArrayList<String> burritoNum= new ArrayList<>();
-//                burrito.add(riceM());
-//                burrito.add(meatM());
-//                burrito.add(beansM());
-//                burrito.add(salsaM());
-//                burrito.add(veggiesM());
-//                burrito.add(cheeseM());
-//                burrito.add(guacM());
-//                burrito.add(quesoM());
-//                burrito.add(sourcreamM());
-//
-//            }while (count<25);
-//        }
-//        for (String x:burrito){
-//            if (x.contains("no")){
-//                count++;
-//            }
-//        }
-//      for (int i=0; i<25; i++){
-//            System.out.println("Burrito "+i+" "+riceM() + ", " + meatM() + ", " + beansM() + ", " + salsaM() + ", " + veggiesM() + ", " + cheeseM() + ", " + guacM() + ", " + quesoM() + ", " + sourcreamM());
-//
-//        }
 
+    }
 
     public static String riceM(){
         String[] rice = new String[]{"white", "brown", "none", "all"};
@@ -64,6 +42,8 @@ public class Main {
         int randMeat = r.nextInt(meat.length);
         if (meat[randMeat].equals("none")){
             meat[randMeat]="no meat";
+        }else if (meat[randMeat].equals("all")) {
+            meat[randMeat] = "all meat";
         }String meatChoice=meat[randMeat];
         return meatChoice;
     }
@@ -89,7 +69,7 @@ public class Main {
     }
 
     public static String veggiesM(){
-        String[] veggies = new String[]{"lettuce", "fajita veggies", "none", "all"};
+        String[] veggies = new String[]{"lettuce", "fajita", "none", "all"};
         Random r = new Random();
         int randVeggies = r.nextInt(veggies.length);
         if (veggies[randVeggies].equals("none")){
